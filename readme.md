@@ -2,6 +2,11 @@
 
 This is a simple YouTube video downloader application built using PyQt6. The application allows users to input a YouTube URL, select the desired video format, and download either the full video or a specified section of it. It features a user-friendly interface.
 
+## Screenshot
+![Screenshot](screenshot.PNG)
+
+
+
 ## Features
 
 - Input a YouTube video URL.
