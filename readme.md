@@ -1,6 +1,6 @@
 # YouTube Video Downloader
 
-This is a simple YouTube video downloader application built using PyQt6. The application allows users to input a YouTube URL, select the desired video format, and download either the full video or a specified section of it. It features a user-friendly interface with a loading spinner during the download process.
+This is a simple YouTube video downloader application built using PyQt6. The application allows users to input a YouTube URL, select the desired video format, and download either the full video or a specified section of it. It features a user-friendly interface.
 
 ## Features
 
@@ -59,3 +59,14 @@ To run this application, you need to have the following installed:
 ## Usage
 
 Run the application using the following command:
+
+   ```bash
+   python main.py
+   ```
+
+
+Enter the YouTube URL, select the desired options, and click the "Download" button to start downloading the video.
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the LICENSE file for more details.
