@@ -70,7 +70,7 @@ class MainWindow(QMainWindow):
         self.preview = QWebEngineView()
         
         # Set minimum size for the preview
-        self.preview.setMinimumSize(780, 440)  # 16:9 aspect ratio
+        self.preview.setMinimumSize(700, 400)  # 16:9 aspect ratio
         self.preview.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         
         self.full_radio = QRadioButton("Full Video")
@@ -91,6 +91,10 @@ class MainWindow(QMainWindow):
 
         # Status label for download progress
         self.status_label = QLabel("")
+        # Size policy and word wrape for status_label
+        self.status_label.setSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
+        self.status_label.setWordWrap(True)
+
 
         # Set initial states
         self.full_radio.setChecked(True)
@@ -234,6 +238,7 @@ class MainWindow(QMainWindow):
 
         # Set specific widget properties
         self.status_label.setObjectName("status_label")
+        self.status_label.setMaximumWidth(700)
         self.loading_spinner.setStyleSheet("""
             background-color: transparent;
         """)
@@ -289,6 +294,7 @@ class MainWindow(QMainWindow):
                     return
                 section = f"*{start}-{end}"
                 cmd.extend(['--download-sections', section])
+                cmd.extend(['--extractor-args', "youtube:player_client=android,web"])
             except ValueError:
                 QMessageBox.warning(self, "Error", "Invalid time format. Use HH:MM:SS or MM:SS")
                 return
